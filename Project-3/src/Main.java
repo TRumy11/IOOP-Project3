@@ -14,7 +14,8 @@ public class Main {
         System.out.println("""
                 Hi, in this program you can play 1 of 2 games:\s
                     1. Rock, Paper, Scissors (which should be self explanatory)
-                    2. A guessing game, where you have to guess the correct number between zero and some number""");
+                    2. A guessing game, where you have to guess the correct number between zero and some number
+                    'Exit' can be used to exit without playing.""");
         boolean cont = false;
         boolean first = true;
         do {
@@ -33,8 +34,14 @@ public class Main {
                     game = Integer.parseInt(gameInp);
                     valid = game == 1 || game == 2 || game == 3;
                 } catch (NumberFormatException except) {
-                    System.out.print("\nNot a valid input, please try again: ");
-                    gameInp = scn.next();
+                    if (gameInp.equalsIgnoreCase("exit")) {
+                        game = 4;
+                        valid = true;
+                    }
+                    else {
+                        System.out.print("\nNot a valid input, please try again: ");
+                        gameInp = scn.next();
+                    }
                 }
             }
             boolean relist = false;
@@ -47,8 +54,12 @@ public class Main {
                     break;
                 case 3:
                     relist = true;
-                    System.out.println("1. Rock, Paper, Scissors\n2. A guessing game");
+                    System.out.println("1. Rock, Paper, Scissors\n2. A guessing game\n'Exit' to quit");
                     cont = true;
+                    break;
+                case 4:
+                    relist = true;
+                    cont = false;
                     break;
                 default:
                     System.out.println("Something went wrong. Sorry.");
@@ -63,7 +74,8 @@ public class Main {
                     if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")) {
                         playValid = true;
                         cont = true;
-                    } else if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("no")) {
+                    } else if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("no") ||
+                            input.equalsIgnoreCase("exit")) {
                         playValid = true;
                         cont = false;
                     } else {
