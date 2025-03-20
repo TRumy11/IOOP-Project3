@@ -2,8 +2,17 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * Project 3 RockPaperScissors class
+ * @author Thom Rumberger
+ */
 public class RockPaperScissors {
+    /**
+     * The 'rps' method implements a game of rock paper scissors in which the user selects either rock, paper, or scissors,
+     * followed by the 'computer' choosing an option of it's own. These selections are then sent to the 'winner' method where
+     * the winner of the game is determined.
+     * This method allows for the user to play the game again or exit back to the 'main' menu once finished with a round.
+     */
     public static void rps() {
         Random rnd = new Random();
         Scanner scn = new Scanner(System.in);
@@ -65,6 +74,12 @@ public class RockPaperScissors {
             }
         } while (play);
     }
+    /**
+     * The 'winner' method takes the choices of both the player and computer and determines which wins the game of rock paper scissors.
+     * The outcome is then shown to the player via text output and the method ends, returning to the 'rps' method
+     * @param pChoice
+     * @param cChoice
+     */
     public static void winner (int pChoice, int cChoice) {
         // 1:Rock, 2:Paper, 3:Scissors
         int wdl = 0; // 1:Win, 2:Draw, 3:Loss
