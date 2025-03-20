@@ -63,7 +63,8 @@ public class RockPaperScissors {
                     playValid = true;
                     play = true;
                 }
-                else if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("no")) {
+                else if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("no") ||
+                        input.equalsIgnoreCase("exit")) {
                     playValid = true;
                     play = false;
                 }
