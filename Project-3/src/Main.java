@@ -1,5 +1,14 @@
 import java.util.Scanner;
+/**
+ * Project 3 Main class
+ * @author Thom Rumberger
+ */
 public class Main {
+    /**
+     * The 'main' method is the menu, allowing the user to select either the rock paper scissors or guessing games.
+     * It also allows the user to select a different (or the same) game after the previous game finished running,
+     * with an option to re-display the options they can select from.
+     */
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         System.out.println("""
