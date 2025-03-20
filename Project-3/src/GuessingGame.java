@@ -78,7 +78,6 @@ public class GuessingGame {
             }
         } while(play);
     }
-
     /**
      * The 'correctGuess' method takes the player guess and correct number and determines whether the guess is
      * too high, too low, or correct. It then returns a boolean value based on whether the guess was correct or not.
