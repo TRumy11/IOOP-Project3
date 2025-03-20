@@ -1,7 +1,16 @@
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * Project 3 GuessingGame class
+ * @author Thom Rumberger
+ */
 public class GuessingGame {
+    /**
+     * The 'guessingGame' method implements a guessing game in which the user selects a number to be the upper bound,
+     * the computer selets a number between 0 and that bound (0 not included), and then the player guesses what that number is up to 5 times.
+     * The guess is then sent to the 'correctGuess' method to determine whether the guess is right or not, and continues from there.
+     * This method allows for the user to play the game multiple times or exit back to the 'main' menu.
+     */
     public static void guessingGame () {
         Random rnd = new Random();
         Scanner scn = new Scanner(System.in);
@@ -70,6 +79,13 @@ public class GuessingGame {
         } while(play);
     }
 
+    /**
+     * The 'correctGuess' method takes the player guess and correct number and determines whether the guess is
+     * too high, too low, or correct. It then returns a boolean value based on whether the guess was correct or not.
+     * @param guess
+     * @param correct
+     * @return boolean correctGuess
+     */
     public static boolean correctGuess (int guess, int correct) {
         boolean correctGuess = false;
         if (guess > correct) {
